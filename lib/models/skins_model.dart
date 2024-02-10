@@ -437,7 +437,7 @@ class Layout {
   factory Layout.fromJson(Map<String, dynamic> json) => Layout(
         id: json["id"],
         name: json["name"],
-        category: json["category"],
+        category: json["category"] ?? "Nulo",
         index: json["index"],
         showIneligibleOffers: json["showIneligibleOffers"],
       );
@@ -481,14 +481,14 @@ class NewDisplayAsset {
 class MaterialInstance {
   String id;
   MaterialInstanceImages images;
-  Colors colors;
+  //Colors colors;
   Map<String, double> scalings;
   dynamic flags;
 
   MaterialInstance({
     required this.id,
     required this.images,
-    required this.colors,
+    //required this.colors,
     required this.scalings,
     required this.flags,
   });
@@ -497,7 +497,6 @@ class MaterialInstance {
       MaterialInstance(
         id: json["id"],
         images: MaterialInstanceImages.fromJson(json["images"]),
-        colors: Colors.fromJson(json["colors"]),
         scalings: Map.from(json["scalings"])
             .map((k, v) => MapEntry<String, double>(k, v?.toDouble())),
         flags: json["flags"],
@@ -506,7 +505,7 @@ class MaterialInstance {
   Map<String, dynamic> toJson() => {
         "id": id,
         "images": images.toJson(),
-        "colors": colors.toJson(),
+        //"colors": colors.toJson(),
         "scalings":
             Map.from(scalings).map((k, v) => MapEntry<String, dynamic>(k, v)),
         "flags": flags,
@@ -545,7 +544,7 @@ class MaterialInstanceImages {
   factory MaterialInstanceImages.fromJson(Map<String, dynamic> json) =>
       MaterialInstanceImages(
         offerImage: json["OfferImage"],
-        background: json["Background"],
+        background: json["Background"] ?? "Nulo",
       );
 
   Map<String, dynamic> toJson() => {

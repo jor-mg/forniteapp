@@ -1,6 +1,6 @@
+import 'package:flutter/material.dart';
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:forniteapp/models/skins_model.dart';
 import 'package:http/http.dart' as http;
 
@@ -10,6 +10,10 @@ class SkinProvider extends ChangeNotifier {
   bool _isLoadingSkin = true;
 
   bool get isLoadingSkin => _isLoadingSkin;
+
+  SkinProvider() {
+    getSkins();
+  }
 
   Future<void> getSkins() async {
     final url = Uri.http('fortnite-api.com', '/v2/shop/br');

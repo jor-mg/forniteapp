@@ -50,7 +50,7 @@ class SkinsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'ITEM SHOP',
+          'PULPIIN STORE',
           style: textStyle,
         ),
       ),
@@ -80,7 +80,7 @@ class SkinsPage extends StatelessWidget {
                         child: Center(
                           child: Text(
                             category,
-                            style: textStyle.copyWith(color: Colors.white),
+                            style: textStyle.copyWith(color: Colors.red),
                             textAlign: TextAlign.center,
                           ),
                         ),
@@ -134,7 +134,7 @@ class SkinsPage extends StatelessWidget {
                               height: 190,
                               child: GridView.builder(
                                 gridDelegate:
-                                    SliverGridDelegateWithFixedCrossAxisCount(
+                                    const SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 2,
                                   crossAxisSpacing: 10.0,
                                   mainAxisSpacing: 10.0,
